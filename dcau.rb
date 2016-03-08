@@ -10,7 +10,7 @@ PREFIXES = ['B', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']
 # Convert one file to dca
 def convert_one(path, output)
   start = Time.now
-  Open3.popen2('dca', path) do |i, o, t|
+  Open3.popen2('dca', '-i', path) do |i, o, t|
     File.write(output, o.read)
   end
 
